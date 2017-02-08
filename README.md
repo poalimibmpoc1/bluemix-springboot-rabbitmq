@@ -8,7 +8,7 @@ mvn package
 
 ### Deploy
 
-Change the `name' in manifest.yml.
+Change the `name` in manifest.yml.
 
 ```
 cf push
