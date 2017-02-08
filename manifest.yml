@@ -1,0 +1,16 @@
+---
+declared-services: 
+    my_rabbitmq: 
+        label: compose-for-rabbitmq
+        plan: Standard
+
+applications:
+- name: csnow-springboot2
+  memory: 512M
+  instances: 1
+  path: target/springboot-0.0.1-SNAPSHOT.jar
+  buildpack: https://github.com/cloudfoundry/java-buildpack
+  services:
+  - my_rabbitmq
+  env:
+    SPRING_PROFILES_ACTIVE : cloud
